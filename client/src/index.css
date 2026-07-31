@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Bloomsage design tokens
+   Sage-forward palette (not cream-forward) with an ochre accent —
+   deliberately avoiding the cream+serif+terracotta "apothecary" default.
+   Signature motif: product cards styled like botanical specimen labels.
+   ============================================================ */
+@theme {
+  --color-sage-50: #f4f7f2;
+  --color-sage-100: #e6ede1;
+  --color-sage-600: #4a6b52;
+  --color-sage-700: #3a5641;
+  --color-sage-900: #1f2e23;
+  --color-ochre: #c1953f;
+  --color-ochre-soft: #f3e6cc;
+  --color-clay: #b8654f;
+  --color-ink: #22281f;
+  --color-paper: #fbfaf6;
+  --color-line: #dde3d6;
+
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sage-700);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-ochre-soft);
+  color: var(--color-ink);
+}
+
+.container-page {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Specimen-label motif used on product cards: a small perforated-looking
+   rule and mono SKU code, echoing an apothecary ingredient docket. */
+.label-rule {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-line) 0,
+    var(--color-line) 4px,
+    transparent 4px,
+    transparent 9px
+  );
+  height: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

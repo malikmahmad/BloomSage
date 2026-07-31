@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Bloomsage Admin — a plainer, utilitarian palette than the storefront.
+   Neutral slate surface with the same sage/clay accents for brand
+   continuity, but laid out like a real operations tool, not a showcase.
+   ============================================================ */
+@theme {
+  --color-sage-600: #4a6b52;
+  --color-sage-700: #3a5641;
+  --color-sage-900: #1f2e23;
+  --color-sage-50: #eef2ec;
+  --color-clay: #b8654f;
+  --color-amber: #b8863c;
+  --color-ink: #1b2027;
+  --color-muted: #667085;
+  --color-paper: #f6f7f9;
+  --color-surface: #ffffff;
+  --color-line: #e3e6eb;
+
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sage-700);
+  outline-offset: 2px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

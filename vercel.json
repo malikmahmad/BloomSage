@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/src/server.js",
+      "use": "@vercel/node",
+      "config": { "maxLambdaSize": "50mb" }
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/server/src/server.js" },
+    { "src": "/admin/assets/(.*)", "dest": "/public/admin/assets/$1" },
+    { "src": "/admin/favicon.svg", "dest": "/public/admin/favicon.svg" },
+    { "src": "/admin", "dest": "/public/admin/index.html" },
+    { "src": "/admin/(.*)", "dest": "/public/admin/index.html" },
+    { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
+    { "src": "/favicon.svg", "dest": "/public/favicon.svg" },
+    { "src": "/(.*)", "dest": "/public/index.html" }
+  ]
+}

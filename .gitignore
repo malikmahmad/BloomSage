@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build output
+dist/
+*/dist/
+
+# Environment variables — local only
+.env
+.env.local
+*/.env
+*/.env.local
+
+# Production env has Turso credentials — don't commit
+.env.production
+server/.env.production
+deploy.env
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# Logs
+npm-debug.log*
+*.log
+
+# Uploaded files (don't commit user uploads)
+server/uploads/*
+!server/uploads/.gitkeep
